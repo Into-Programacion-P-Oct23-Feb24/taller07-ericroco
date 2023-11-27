@@ -18,20 +18,24 @@ public class Problema05 {
         int valor = 1;
         String signo;
         String acumulador = "1";
-        int num = 3;
-
+        double termino = 0;
+        int masOmenos = 1;
+        double resultado = 0;
+        double num = 1;
         do {
             if (valor % 2 == 0) {
                 signo = "+";
             } else {
                 signo = "-";
             }
-
+             termino = masOmenos * (1 / num);
+            resultado = resultado + termino;
             valor = valor + 1;
-            acumulador = String.format("%s %s 1/%s", acumulador, signo, num);
+            acumulador = String.format("%s %s 1/%s", acumulador, signo, (int) num);
+            masOmenos = masOmenos * -1;
             num = num + 2;
         } while (num <= 15);
-        System.out.println(acumulador);
+        System.out.printf("%s\nEl resultado es: %.2f\n", acumulador, resultado);
     }
 
 }
